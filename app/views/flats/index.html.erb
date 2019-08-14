@@ -1,0 +1,24 @@
+<h1>All our Flats ()</h1>
+
+<%= link_to 'Add Flat', new_flat_path %>
+
+<div class="container">
+
+  <% @flats.each do |flat| %>
+  <div class="card-flat">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-flat-desc">
+      <h2><%= flat.name %></h2>
+      <p><%= flat.address %></p>
+    </div>
+    <div class="card-flat-details">
+      <h2 class="card-flat-number"><%= flat.number_of_guests %></h2>
+      <h2 class="card-flat-pricing">£<%= flat.price_per_night %></h2>
+    </div>
+    <div class="centered-text">
+      <%= link_to 'More details', flat_path(flat) %>
+      <%= link_to 'Edit', edit_flat_path(flat) %>
+    </div>
+  </div>
+  <% end %>
+</div>
